@@ -1,4 +1,2 @@
 <h3>Favorite Gifs</h3>
-<div ng-model="gc.getFavorites()"></div>
-<!-- <div ng-repeat="gifs in gc.favoriteGifList">blah</div> -->
-<!-- <button class="btn btn-outline-primary" ng-click="gc.getFavorites()">Show Favorites</button> -->
+<div ng-repeat="faves in gc.favoriteGifList"> {{ faves.comment}} {{ faves.url}}</div>

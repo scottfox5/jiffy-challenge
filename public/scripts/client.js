@@ -36,14 +36,16 @@ app.controller('GiphyController', function(GifGetter){
     GifGetter.getFavorites().then(function(res){
       console.log("response from the controller for getting favorites", res)
       vm.favoriteGifList = res.data;
+      // console.log('array of favorites', vm.favoriteGifList);
+      // console.log('number of faves', vm.favoriteGifList.length);
     })
   } // end of vm.getFavorites
 
-  vm.addFavorite = function(){
-    GifGetter.addFavorite().then(function(res){
-      console.log("response from the controller for adding a favorite", res)
-      vm.favoriteGifList = res.data;
-    })
-  } // end of vm.addFavorite
+  // vm.addFavorite = function(){
+  //   GifGetter.addFavorite().then(function(res){
+  //     console.log("response from the controller for adding a favorite", res)
+  //     vm.favoriteGifList = res.data;
+  //   })
+  // } // end of vm.addFavorite
 
 }); // end of app.controller

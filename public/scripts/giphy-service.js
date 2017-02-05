@@ -38,25 +38,23 @@ app.service('GifGetter', function($http){ // setting up a service called GifGett
       url: '/gifs'
     }).then(function(response){ // resolve promise
       console.log(response);
-      return response.data;
+      return response;
     }).catch(function(error){ // reject promise
       console.log(error);
     })
   } // end of getFavorites
 
-  this.addFavorite = function(){
-    console.log('adding favorites');
-    return $http({
-      type:'POST',
-      url: '/gifs'
-    }).then(function(response){ // resolve promise
-      console.log(response);
-      return response.data;
-    }).catch(function(error){ // reject promise
-      console.log(error);
-    })
-  } // end of addFavorite
-
-  
+  // this.addFavorite = function(){
+  //   console.log('adding favorites');
+  //   return $http({
+  //     type:'POST',
+  //     url: '/gifs'
+  //   }).then(function(response){ // resolve promise
+  //     console.log(response);
+  //     return response.data;
+  //   }).catch(function(error){ // reject promise
+  //     console.log(error);
+  //   })
+  // } // end of addFavorite
 
 });

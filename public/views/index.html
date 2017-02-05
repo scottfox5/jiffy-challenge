@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="/styles/stylesheet.css" />
   <script src="/vendors/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="/vendors/sweetalert.css">
-  <base href="/" target="_blank">
+  <base href="/">
 </head>
 <body ng-app="giphyApp">
   <main ng-controller="GiphyController as gc">
@@ -19,7 +19,7 @@
     <div>
       <h1>Gifs!</h1>
       <a href="/">Home</a>
-      <a href="/favorites">Favorites</a>
+      <a href="/favorites" ng-click="gc.getFavorites()">Favorites {{ gc.favoriteGifList.length }}</a>
     </div>
 
     <div>
