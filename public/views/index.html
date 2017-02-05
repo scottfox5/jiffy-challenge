@@ -23,10 +23,10 @@
     </div>
 
     <div>
-      <img  ng-show="gc.randomGifUrl" ng-src="{{ gc.randomGifUrl }}">
+      <img ng-show="gc.randomGifUrl" ng-src="{{ gc.randomGifUrl }}">
       <img ng-repeat="gifs in gc.searchGifUrl" ng-show="gc.searchGifUrl" ng-src="{{ gifs.images.original.url }}">
       <input placeholder="enter comment here" type='text'>
-      <button class="btn btn-outline-primary">ADD TO FAVORITES</button>
+      <button class="btn btn-outline-primary" ng-click="gc.addFavorite()">ADD TO FAVORITES</button>
     </div>
 
     <div>

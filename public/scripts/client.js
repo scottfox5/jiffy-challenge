@@ -27,9 +27,23 @@ app.controller('GiphyController', function(GifGetter){
 
   vm.searchGif = function(searchQuery){  // search gifs, searchQuery is text input
     GifGetter.searchGif(searchQuery).then(function(res){
-      console.log("respose from the controller for search", res)
+      console.log("response from the controller for search", res)
       vm.searchGifUrl = res.data; // store array of gifs in searchGifUrl
     })
   } // end of vm.serchGif
+
+  vm.getFavorites = function(){
+    GifGetter.getFavorites().then(function(res){
+      console.log("response from the controller for getting favorites", res)
+      vm.favoriteGifList = res.data;
+    })
+  } // end of vm.getFavorites
+
+  vm.addFavorite = function(){
+    GifGetter.addFavorite().then(function(res){
+      console.log("response from the controller for adding a favorite", res)
+      vm.favoriteGifList = res.data;
+    })
+  } // end of vm.addFavorite
 
 }); // end of app.controller

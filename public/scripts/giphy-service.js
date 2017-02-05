@@ -14,7 +14,7 @@ app.service('GifGetter', function($http){ // setting up a service called GifGett
     }).catch(function(error){ // reject promise
       console.log(error);
     })
-  }
+  }// end of randomGif
 
 
   //function to search for a gif by making get request to giphy API
@@ -29,6 +29,34 @@ app.service('GifGetter', function($http){ // setting up a service called GifGett
     }).catch(function(error){ // reject promise
       console.log(error);
     })
-  }
+  } // end of searchGif
+
+  this.getFavorites = function(){
+    console.log('getting favorites');
+    return $http({
+      type:'GET',
+      url: '/gifs'
+    }).then(function(response){ // resolve promise
+      console.log(response);
+      return response.data;
+    }).catch(function(error){ // reject promise
+      console.log(error);
+    })
+  } // end of getFavorites
+
+  this.addFavorite = function(){
+    console.log('adding favorites');
+    return $http({
+      type:'POST',
+      url: '/gifs'
+    }).then(function(response){ // resolve promise
+      console.log(response);
+      return response.data;
+    }).catch(function(error){ // reject promise
+      console.log(error);
+    })
+  } // end of addFavorite
+
+  
 
 });
