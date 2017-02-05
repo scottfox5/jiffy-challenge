@@ -1,4 +1,4 @@
-#Weekend Challenge 3
+#Weekend Challenge 5
 
 This is an application that uses the Giphy API. The user can search for a gif or click a button to return a random gif. The user can then comment on the gif and store it in their favorites. The user then can see the comments and urls of their favorite gifs.
 
