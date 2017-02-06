@@ -22,7 +22,7 @@ app.service('GifGetter', function($http){ // setting up a service called GifGett
     return $http({
       type:'GET',
       url: giphyUrl + 'search?q=' + query + "&api_key=" + publicAPIkey,
-      params: {"rating": 'g', "limit": 1} // paremeters that limit search results to 1 item that is rated g
+      params: {"rating": 'g', "limit": 5} // paremeters that limit search results to 1 item that is rated g
     }).then(function(response){ // resolve promise
       console.log(response);
       return response.data;
@@ -52,10 +52,25 @@ app.service('GifGetter', function($http){ // setting up a service called GifGett
       data: favGif
     }).then(function(response){ // resolve promise
       console.log('post response', response);
+      swal("Excellent!", "Gif has been added to favorites!", "success")
       return response.data;
     }).catch(function(error){ // reject promise
       console.log('post error', error);
     })
+
   } // end of addFavorite
+
+  this.deleteFavorite = function(){
+    console.log('deleting a favorite');
+    return $http({
+      method:'DELETE',
+      url: '/gifs',
+    }).then(function(response){ // resolve promise
+      console.log('delete response', response);
+      return response.data;
+    }).catch(function(error){ // reject promise
+      console.log('delete error', error);
+    })
+  } // end of deleteFavorite
 
 });

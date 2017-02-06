@@ -9,6 +9,7 @@
   <script type="text/javascript" src=/scripts/giphy-service.js></script>
   <link rel="stylesheet" href="/vendors/bootstrap.css" />
   <link rel="stylesheet" href="/styles/stylesheet.css" />
+  <link href="https://fonts.googleapis.com/css?family=Sigmar+One" rel="stylesheet">
   <script src="/vendors/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="/vendors/sweetalert.css">
   <base href="/">
@@ -19,26 +20,34 @@
     <div>
       <h1>Gifs!</h1>
       <a href="/">Home</a>
-      <a href="/favorites" ng-click="gc.getFavorites()">Favorites {{ gc.favoriteGifList.length }}</a>
+      <a href="/favorites" ng-click="gc.getFavorites()">Favorites:  {{ gc.favoriteGifList.length }}</a>
     </div>
 
     <div>
       <h2>Find Some Gifs</h2>
-      <input placeholder="search for gifs" ng-model="gc.searchQuery" type='text'>
+      <input placeholder="search for gifs" ng-model="gc.searchQuery" type='text' class="focus">
       <button class="btn btn-outline-primary" ng-click="gc.searchGif(gc.searchQuery)">SEARCH</button>
       <button class="btn btn-outline-primary" ng-click="gc.randomGif()">GET A RANDOM GIF</button>
     </div>
 
-    <div class="random">
-      <img ng-show="gc.randomGifUrl" ng-src="{{ gc.randomGifUrl }}">
-      <input placeholder="enter comment here" type='text' ng-model="gc.comment1">
-      <button class="btn btn-outline-primary" ng-click="gc.addFavorite(gc.comment1, gc.randomGifUrl)">ADD TO FAVORITES</button>
+    <div class=" random">
+      <div ng-show="gc.randomGifUrl" >
+        <img ng-src="{{ gc.randomGifUrl }}">
+        <input placeholder="enter comment here" type='text' ng-model="gc.comment1">
+        <button class="btn btn-outline-primary" ng-click="gc.addFavorite(gc.comment1, gc.randomGifUrl)">ADD TO FAVORITES</button>
+      </div>
+
     </div>
 
     <div class="search">
-      <img ng-repeat="gifs in gc.searchGifUrl" ng-show="gc.searchGifUrl" ng-src="{{ gifs.images.original.url }}">
-      <input placeholder="enter comment here" type='text' ng-model="gc.comment2">
-      <button class="btn btn-outline-primary" ng-click="gc.addFavorite(gc.comment2, gc.searchGifUrl[0].images.original.url)">ADD TO FAVORITES</button>
+      <ul>
+        <li ng-repeat="gifs in gc.searchGifUrl">
+          <img ng-show="gc.searchGifUrl" ng-src="{{ gifs.images.original.url }}">
+          <input placeholder="enter comment here" type='text' ng-model="gc.comment2">
+          <button class="btn btn-outline-primary" ng-click="gc.addFavorite(gc.comment2, gc.searchGifUrl[$index].images.original.url)">ADD TO FAVORITES</button>
+        </li>
+      </ul>
+
     </div>
 
     <div>

@@ -1,4 +1,8 @@
 <h3>Favorite Gifs</h3>
 <ul>
-  <li ng-repeat="faves in gc.favoriteGifList"><img ng-src="{{ faves.url }}"><p>Comments: {{ faves.comment }}</p></li>
+  <li ng-repeat="faves in gc.favoriteGifList">
+    <img ng-src="{{ faves.url }}">
+    <p>{{ faves.comment }}</p>
+    <button class="delete btn btn-outline-danger btn-sm" ng-click="gc.deleteFavorite()">Delete</button>
+  </li>
 </ul>

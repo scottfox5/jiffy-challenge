@@ -1,9 +1,19 @@
-body {
+body, button{
   text-align: center;
+  font-family: 'Sigmar One', cursive;
+  color: whitesmoke;
 }
 
-h1, h2, h3 {
-margin: 20px;
+body {
+  background-color: black;
+}
+
+h1 {
+  margin: 80px 0 20px;
+}
+
+h2, h3 {
+margin: 50px 0 50px;
 }
 
 img {
@@ -17,6 +27,8 @@ img {
 
 a {
   margin: 0 50px 0;
+  text-decoration: none;
+  color: maroon;
 }
 
 ul{
@@ -31,6 +43,14 @@ p {
   margin-top: 20px;
 }
 
+input, button {
+  margin: 20px;
+}
+
 input {
+  background-color: #111111;
+  color: papayawhip;
   text-align: center;
+  padding: 10px;
+  border: solid 2px #dcdcdc;
 }

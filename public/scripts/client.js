@@ -47,10 +47,14 @@ app.controller('GiphyController', function(GifGetter){
       'comment': favComment,
       'url': favUrl
     }
-    console.log('favorite', vm.favObj)
-    GifGetter.addFavorite(vm.favObj) // 
+    console.log('favorite', vm.favObj);
+    GifGetter.addFavorite(vm.favObj); //
     vm.comment1 = ""; // clears input field after comment is submitted
     vm.comment2 = ""; // clears input field after comment is submitted
   } // end of vm.addFavorite
+
+  vm.deleteFavorite = function(){
+    GifGetter.deleteFavorite();
+  }
 
 }); // end of app.controller
