@@ -7,7 +7,7 @@ CREATE TABLE gifs (
 );
 
 INSERT INTO gifs (url, comment)
-VALUES ('http://giphy.com/embed/pOKrXLf9N5g76', 'this is funny');
+VALUES ('http://media2.giphy.com/media/pOKrXLf9N5g76/giphy.gif', 'this is funny');
 
 INSERT INTO gifs (url, comment)
-VALUES ('http://giphy.com/embed/13e3SmWdOtFEo8', 'this is not funny');
+VALUES ('http://media4.giphy.com/media/l2JhGYxcjMcKqiaHu/giphy.gif', 'this is not funny');

@@ -44,17 +44,18 @@ app.service('GifGetter', function($http){ // setting up a service called GifGett
     })
   } // end of getFavorites
 
-  // this.addFavorite = function(){
-  //   console.log('adding favorites');
-  //   return $http({
-  //     type:'POST',
-  //     url: '/gifs'
-  //   }).then(function(response){ // resolve promise
-  //     console.log(response);
-  //     return response.data;
-  //   }).catch(function(error){ // reject promise
-  //     console.log(error);
-  //   })
-  // } // end of addFavorite
+  this.addFavorite = function(favGif){
+    console.log('adding a favorite', favGif);
+    return $http({
+      method:'POST',
+      url: '/gifs',
+      data: favGif
+    }).then(function(response){ // resolve promise
+      console.log('post response', response);
+      return response.data;
+    }).catch(function(error){ // reject promise
+      console.log('post error', error);
+    })
+  } // end of addFavorite
 
 });

@@ -23,17 +23,22 @@
     </div>
 
     <div>
-      <img ng-show="gc.randomGifUrl" ng-src="{{ gc.randomGifUrl }}">
-      <img ng-repeat="gifs in gc.searchGifUrl" ng-show="gc.searchGifUrl" ng-src="{{ gifs.images.original.url }}">
-      <input placeholder="enter comment here" type='text'>
-      <button class="btn btn-outline-primary" ng-click="gc.addFavorite()">ADD TO FAVORITES</button>
-    </div>
-
-    <div>
-      <h2>Get more Gifs</h2>
-      <input placeholder="search here" ng-model="gc.searchQuery" type='text'>
+      <h2>Find Some Gifs</h2>
+      <input placeholder="search for gifs" ng-model="gc.searchQuery" type='text'>
       <button class="btn btn-outline-primary" ng-click="gc.searchGif(gc.searchQuery)">SEARCH</button>
       <button class="btn btn-outline-primary" ng-click="gc.randomGif()">GET A RANDOM GIF</button>
+    </div>
+
+    <div class="random">
+      <img ng-show="gc.randomGifUrl" ng-src="{{ gc.randomGifUrl }}">
+      <input placeholder="enter comment here" type='text' ng-model="gc.comment1">
+      <button class="btn btn-outline-primary" ng-click="gc.addFavorite(gc.comment1, gc.randomGifUrl)">ADD TO FAVORITES</button>
+    </div>
+
+    <div class="search">
+      <img ng-repeat="gifs in gc.searchGifUrl" ng-show="gc.searchGifUrl" ng-src="{{ gifs.images.original.url }}">
+      <input placeholder="enter comment here" type='text' ng-model="gc.comment2">
+      <button class="btn btn-outline-primary" ng-click="gc.addFavorite(gc.comment2, gc.searchGifUrl[0].images.original.url)">ADD TO FAVORITES</button>
     </div>
 
     <div>

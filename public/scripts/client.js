@@ -29,6 +29,7 @@ app.controller('GiphyController', function(GifGetter){
     GifGetter.searchGif(searchQuery).then(function(res){
       console.log("response from the controller for search", res)
       vm.searchGifUrl = res.data; // store array of gifs in searchGifUrl
+      vm.searchQuery = ""; // clears the search field after submission
     })
   } // end of vm.serchGif
 
@@ -41,11 +42,15 @@ app.controller('GiphyController', function(GifGetter){
     })
   } // end of vm.getFavorites
 
-  // vm.addFavorite = function(){
-  //   GifGetter.addFavorite().then(function(res){
-  //     console.log("response from the controller for adding a favorite", res)
-  //     vm.favoriteGifList = res.data;
-  //   })
-  // } // end of vm.addFavorite
+  vm.addFavorite = function(favComment, favUrl){ // pass in comment and url of favorite gif
+    vm.favObj = { // builds an object of favorited gift to send in post request
+      'comment': favComment,
+      'url': favUrl
+    }
+    console.log('favorite', vm.favObj)
+    GifGetter.addFavorite(vm.favObj) // 
+    vm.comment1 = ""; // clears input field after comment is submitted
+    vm.comment2 = ""; // clears input field after comment is submitted
+  } // end of vm.addFavorite
 
 }); // end of app.controller

@@ -1,2 +1,4 @@
 <h3>Favorite Gifs</h3>
-<div ng-repeat="faves in gc.favoriteGifList"> {{ faves.comment}} {{ faves.url}}</div>
+<ul>
+  <li ng-repeat="faves in gc.favoriteGifList"><img ng-src="{{ faves.url }}"><p>Comments: {{ faves.comment }}</p></li>
+</ul>
