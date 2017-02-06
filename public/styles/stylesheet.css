@@ -39,6 +39,10 @@ li {
   margin: 80px;
 }
 
+ul li {
+  display: inline-block;
+}
+
 p {
   margin-top: 20px;
 }
@@ -48,7 +52,7 @@ input, button {
 }
 
 input {
-  background-color: #111111;
+  background-color: black;
   color: papayawhip;
   text-align: center;
   padding: 10px;

@@ -33,18 +33,22 @@
     <div class=" random">
       <div ng-show="gc.randomGifUrl" >
         <img ng-src="{{ gc.randomGifUrl }}">
-        <input placeholder="enter comment here" type='text' ng-model="gc.comment1">
-        <button class="btn btn-outline-primary" ng-click="gc.addFavorite(gc.comment1, gc.randomGifUrl)">ADD TO FAVORITES</button>
+        <p>
+          <input placeholder="enter comment here" type='text' ng-model="gc.comment1">
+          <button class="btn btn-outline-primary" ng-click="gc.addFavorite(gc.comment1, gc.randomGifUrl)">ADD TO FAVORITES</button>
+        </p>
       </div>
 
     </div>
 
     <div class="search">
-      <ul>
+      <ul class="list-inline">
         <li ng-repeat="gifs in gc.searchGifUrl">
           <img ng-show="gc.searchGifUrl" ng-src="{{ gifs.images.original.url }}">
-          <input placeholder="enter comment here" type='text' ng-model="gc.comment2">
-          <button class="btn btn-outline-primary" ng-click="gc.addFavorite(gc.comment2, gc.searchGifUrl[$index].images.original.url)">ADD TO FAVORITES</button>
+          <p>
+            <input placeholder="enter comment here" type='text' ng-model="gc.comment2">
+            <button class="btn btn-outline-primary" ng-click="gc.addFavorite(gc.comment2, gc.searchGifUrl[$index].images.original.url)">ADD TO FAVORITES</button>
+          </p>
         </li>
       </ul>
 
